@@ -397,7 +397,7 @@ html {
 
 body {
   font-size: 1rem;
-  font-weight: normal;
+  font-weight: 400;
   color: #232a40;
   text-align: left;
   background-color: #ffffff; }
@@ -405,10 +405,67 @@ body {
 button {
   cursor: pointer; }
 
-.test-font {
-  font-family: 'Work Sans', serif;
-  font-weight: 600;
-  font-size: 1.25rem; }
+.rgi-container {
+  max-width: 1440px;
+  padding: 0 90px;
+  margin: 0 auto; }
+
+.rgi-header {
+  background-color: #f5f5f5;
+  padding-top: 2.125rem; }
+  .rgi-header .rgi-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 57px; }
+
+.rgi-hero {
+  background-color: #f5f5f5;
+  padding-top: 3.75rem; }
+  .rgi-hero .rgi-hero-wrap {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2.5rem; }
+    .rgi-hero .rgi-hero-wrap .hero-left {
+      display: flex;
+      flex-direction: column;
+      max-width: 50%; }
+      .rgi-hero .rgi-hero-wrap .hero-left h1 {
+        font-size: 3.75rem;
+        line-height: 120%;
+        font-weight: 700;
+        text-transform: capitalize; }
+      .rgi-hero .rgi-hero-wrap .hero-left p {
+        margin-top: 1.3125rem;
+        line-height: 120%;
+        font-size: 1.25rem; }
+    .rgi-hero .rgi-hero-wrap .hero-right .hero-right-w {
+      position: relative;
+      width: 140%; }
+    .rgi-hero .rgi-hero-wrap .hero-right .hero-right-img-c {
+      position: relative;
+      overflow: hidden; }
+      .rgi-hero .rgi-hero-wrap .hero-right .hero-right-img-c::before {
+        content: '';
+        position: absolute;
+        left: -30%;
+        top: 50%;
+        transform: translateY(-46%) rotate(14deg);
+        background: #f5f5f5;
+        width: 40%;
+        height: 140%; }
+      .rgi-hero .rgi-hero-wrap .hero-right .hero-right-img-c img {
+        width: 96%;
+        object-fit: cover;
+        height: 600px; }
+
+.site-footer {
+  background-color: #232a40;
+  padding-top: 3.75rem;
+  height: 32.5rem; }
+  .site-footer p {
+    color: #f5f5f5; }
 
 /* WordPress Core
 -------------------------------------------------------------- */

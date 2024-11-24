@@ -11,6 +11,11 @@
 <body <?php body_class(); ?>>
   <?php wp_body_open(); ?>
   <div id="page" class="site">
-    <header>
-      <p>Header Section</p>
+    <header class="rgi-header">
+      <div class="rgi-container">
+        <!-- TODO -->
+        <p>Header 1</p>
+        <p>Header 2</p>
+
+      </div>
     </header>

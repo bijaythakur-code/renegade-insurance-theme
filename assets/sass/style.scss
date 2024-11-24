@@ -21,10 +21,96 @@ Tags: custom-menu, custom-logo, featured-images
 @import 'general/normalize';
 @import 'general/reset';
 
-.test-font {
-  font-family: 'Work Sans', serif;
-  font-weight: 600;
-  font-size: rem(20px);
+// container
+.rgi-container {
+  max-width: $container-width;
+  padding: 0 $container-padding;
+  margin: 0 auto;
+}
+
+.rgi-header {
+  background-color: $renegade-white;
+  padding-top: rem(34px);
+
+  .rgi-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 57px;
+  }
+}
+
+.rgi-hero {
+  background-color: $renegade-white;
+  padding-top: rem(60px);
+
+  // height: calc(100vh - 151px);
+
+  .rgi-hero-wrap {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: rem(40px);
+
+    .hero-left {
+      display: flex;
+      flex-direction: column;
+      max-width: 50%;
+
+      h1 {
+        font-size: rem(60px);
+        line-height: 120%;
+        font-weight: 700;
+        text-transform: capitalize;
+      }
+
+      p {
+        margin-top: rem(21px);
+        line-height: 120%;
+        font-size: rem(20px);
+      }
+    }
+
+    .hero-right {
+      .hero-right-w {
+        position: relative;
+        width: 140%;
+      }
+      .hero-right-img-c {
+        position: relative;
+        overflow: hidden;
+
+        &::before {
+          content: '';
+          position: absolute;
+          left: -30%;
+          top: 50%;
+          transform: translateY(-46%) rotate(14deg);
+          background: $renegade-white;
+          width: 40%;
+          height: 140%;
+        }
+
+        img {
+          width: 96%;
+          object-fit: cover;
+          height: 600px;
+        }
+      }
+    }
+  }
+}
+
+// Footer
+
+.site-footer {
+  background-color: $renegade-blue;
+  padding-top: rem(60px);
+  height: rem(520px);
+
+  p {
+    color: $renegade-white;
+  }
 }
 
 // Wordpress cores style in end
