@@ -400,7 +400,8 @@ body {
   font-weight: 400;
   color: #232a40;
   text-align: left;
-  background-color: #ffffff; }
+  background-color: #ffffff;
+  overflow-x: hidden; }
 
 button {
   cursor: pointer; }
@@ -456,9 +457,64 @@ button {
         width: 40%;
         height: 140%; }
       .rgi-hero .rgi-hero-wrap .hero-right .hero-right-img-c img {
-        width: 96%;
+        width: 105%;
         object-fit: cover;
         height: 600px; }
+
+.rgi-home-sec-2 {
+  padding-top: 8rem;
+  padding-bottom: 8rem; }
+  .rgi-home-sec-2 .sec-wrap {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8.125rem; }
+    .rgi-home-sec-2 .sec-wrap .c-left p {
+      font-size: 1.875rem;
+      line-height: 137%; }
+    .rgi-home-sec-2 .sec-wrap .c-right p {
+      font-size: 1.125rem;
+      line-height: 146%; }
+    .rgi-home-sec-2 .sec-wrap .c-right a {
+      display: block;
+      margin-top: 2.5rem;
+      color: #232a40;
+      font-weight: 600; }
+
+.rgi-home-sec-3 {
+  background-color: #232a40;
+  border-bottom: 1.875rem solid #f5f5f5;
+  height: 19.0625rem; }
+  .rgi-home-sec-3 .sec-wrap {
+    display: flex;
+    justify-content: space-between;
+    height: 100%; }
+    .rgi-home-sec-3 .sec-wrap .c-left {
+      display: flex;
+      padding-top: 5.875rem; }
+      .rgi-home-sec-3 .sec-wrap .c-left p {
+        font-weight: 700;
+        font-size: 3rem;
+        line-height: 120%;
+        text-transform: capitalize;
+        color: #f5f5f5; }
+    .rgi-home-sec-3 .sec-wrap .c-right {
+      display: flex;
+      align-items: center; }
+      .rgi-home-sec-3 .sec-wrap .c-right button {
+        position: relative;
+        background-color: #f6c5da;
+        border-radius: 6.25rem;
+        height: 2.8125rem;
+        font-size: 1.125rem;
+        line-height: 125%;
+        font-weight: 600;
+        padding: 0 4.5rem 0 2rem;
+        border: none; }
+        .rgi-home-sec-3 .sec-wrap .c-right button::after {
+          position: absolute;
+          content: url("data:image/svg+xml,%3Csvg width='16' height='8' viewBox='0 0 16 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M15.3536 4.35355C15.5488 4.15829 15.5488 3.84171 15.3536 3.64645L12.1716 0.464466C11.9763 0.269204 11.6597 0.269204 11.4645 0.464466C11.2692 0.659728 11.2692 0.976311 11.4645 1.17157L14.2929 4L11.4645 6.82843C11.2692 7.02369 11.2692 7.34027 11.4645 7.53553C11.6597 7.7308 11.9763 7.7308 12.1716 7.53553L15.3536 4.35355ZM0 4.5H15V3.5H0V4.5Z' fill='%23232A40'/%3E%3C/svg%3E%0A");
+          top: 0.625rem;
+          right: 1.375rem; }
 
 .site-footer {
   background-color: #232a40;

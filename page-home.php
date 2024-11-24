@@ -27,6 +27,49 @@
 
       </section>
 
+      <!-- Section 2  -->
+
+      <section class="rgi-home-sec-2">
+        <div class="sec-wrap rgi-container">
+          <div class="c-left">
+            <p>Renegade Insurance has developed
+              a brand that fills the rapidly increasing
+              demand for insurance services that work seamlessly in different demographic markets.</p>
+          </div>
+
+          <div class="c-right">
+
+            <p>With a perfected business model that brings polished technology along with brokerage prowess that includes 90+ leading carriers,
+              we can provide you with an array of full-scale options for your
+              clients to choose what works best for them. Now, our growing
+              market requires new offices and insurance professionals to reach even more regions across the country.
+
+            </p>
+
+            <a href="#" class="read-more-btn">Read More</a>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- section 3 -->
+
+      <section class="rgi-home-sec-3">
+        <div class="sec-wrap rgi-container">
+
+          <div class="c-left">
+            <p>Work for yourself, not for someone else.</p>
+          </div>
+
+          <div class="c-right">
+            <button>Be a Renegade</button>
+          </div>
+
+
+        </div>
+      </section>
+
+
 
     </main>
   </div>
