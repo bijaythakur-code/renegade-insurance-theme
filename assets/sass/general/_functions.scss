@@ -1,0 +1,9 @@
+// convert px to em
+@function em($pixels, $context: 16px) {
+  @return ($pixels / $context) * 1em;
+}
+
+// convert px to rem
+@function rem($pixels, $root-font-size: 16px) {
+  @return ($pixels / $root-font-size) * 1rem;
+}
