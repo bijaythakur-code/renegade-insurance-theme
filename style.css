@@ -386,8 +386,8 @@ h6 {
 html {
   /* Apply border-box across the entire page. */
   box-sizing: border-box;
-  font-family: var(--global--font-secondary);
-  line-height: var(--global--line-height-body); }
+  font-family: "Work Sans", serif;
+  line-height: 1.4; }
 
 /**
   * Relax the definition a bit, to allow components to override it manually.
@@ -396,11 +396,11 @@ html {
   box-sizing: inherit; }
 
 body {
-  font-size: var(--global--font-size-base);
+  font-size: 1rem;
   font-weight: normal;
-  color: var(--global--color-primary);
+  color: #232a40;
   text-align: left;
-  background-color: var(--global--color-background); }
+  background-color: #ffffff; }
 
 button {
   cursor: pointer; }

@@ -43,8 +43,8 @@ html {
   box-sizing: border-box;
 
   // HTML resets
-  font-family: var(--global--font-secondary);
-  line-height: var(--global--line-height-body);
+  font-family: $global-font-primary;
+  line-height: $global-line-height-body;
 }
 
 /**
@@ -60,11 +60,11 @@ html {
 
 // body resets
 body {
-  font-size: var(--global--font-size-base);
+  font-size: rem(16px);
   font-weight: normal;
-  color: var(--global--color-primary);
+  color: $renegade-blue;
   text-align: left;
-  background-color: var(--global--color-background);
+  background-color: $white;
 }
 
 button {
