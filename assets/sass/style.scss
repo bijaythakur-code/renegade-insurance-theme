@@ -162,22 +162,11 @@ Tags: custom-menu, custom-logo, featured-images
       align-items: center;
 
       button {
-        position: relative;
-        background-color: $renegade-pink;
-        border-radius: rem(100px);
-        height: rem(45px);
-        font-size: rem(18px);
-        line-height: 125%;
-        font-weight: 600;
-        padding: 0 rem(72px) 0 rem(32px);
-        border: none;
+        @include rgi-button($renegade-pink, $renegade-blue);
 
         &::after {
           position: absolute;
           content: url("data:image/svg+xml,%3Csvg width='16' height='8' viewBox='0 0 16 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M15.3536 4.35355C15.5488 4.15829 15.5488 3.84171 15.3536 3.64645L12.1716 0.464466C11.9763 0.269204 11.6597 0.269204 11.4645 0.464466C11.2692 0.659728 11.2692 0.976311 11.4645 1.17157L14.2929 4L11.4645 6.82843C11.2692 7.02369 11.2692 7.34027 11.4645 7.53553C11.6597 7.7308 11.9763 7.7308 12.1716 7.53553L15.3536 4.35355ZM0 4.5H15V3.5H0V4.5Z' fill='%23232A40'/%3E%3C/svg%3E%0A");
-
-          top: rem(10px);
-          right: rem(22px);
         }
       }
     }
@@ -300,6 +289,122 @@ Tags: custom-menu, custom-logo, featured-images
 }
 
 // Section 4 Slider end
+
+// Section 5 the franchise process
+
+.rgi-home-sec-5 {
+  padding-top: rem(92px);
+  .sec-5-wrap {
+    h2 {
+      font-weight: 600;
+      font-size: rem(35px);
+      line-height: 120%;
+      text-transform: capitalize;
+      margin-bottom: rem(54px);
+    }
+    .process-wrap {
+      padding-left: rem(90px);
+      padding-right: rem(90px);
+      margin-bottom: rem(145px);
+      display: flex;
+      justify-content: space-between;
+      gap: rem(12px);
+      .process-item {
+        background: rgba(246, 197, 218, 0.25);
+        width: rem(332px);
+        height: rem(385px);
+
+        padding-left: rem(34px);
+        padding-right: rem(34px);
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        span {
+          display: block;
+          font-weight: 700;
+          font-size: rem(60px);
+          line-height: 120%;
+          text-transform: capitalize;
+          margin-top: rem(43px);
+        }
+
+        h3 {
+          font-weight: 600;
+          font-size: rem(22px);
+          line-height: 120%;
+          text-transform: capitalize;
+          margin-top: rem(13px);
+        }
+
+        p {
+          font-weight: 400;
+          font-size: rem(16px);
+          line-height: 120%;
+          text-align: center;
+          margin-top: rem(35px);
+        }
+
+        button {
+          margin-top: auto;
+          margin-bottom: rem(40px);
+          @include rgi-button($renegade-blue, $renegade-white);
+
+          &::after {
+            position: absolute;
+            content: url("data:image/svg+xml,%3Csvg width='16' height='8' viewBox='0 0 16 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M15.3536 4.35355C15.5488 4.15829 15.5488 3.84171 15.3536 3.64645L12.1716 0.464466C11.9763 0.269204 11.6597 0.269204 11.4645 0.464466C11.2692 0.659728 11.2692 0.976311 11.4645 1.17157L14.2929 4L11.4645 6.82843C11.2692 7.02369 11.2692 7.34027 11.4645 7.53553C11.6597 7.7308 11.9763 7.7308 12.1716 7.53553L15.3536 4.35355ZM0 4.5H15V3.5H0V4.5Z' fill='%23F5F5F5'/%3E%3C/svg%3E%0A");
+          }
+        }
+      }
+    }
+
+    .franchise-facts-wrap {
+      margin-bottom: rem(102px);
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      row-gap: rem(24px);
+      column-gap: rem(20px);
+      .ff-item {
+        background: $renegade-white;
+        padding: rem(34px) rem(42px);
+
+        h3 {
+          font-weight: 600;
+          font-size: rem(28px);
+          line-height: 120%;
+          text-transform: capitalize;
+          margin-bottom: rem(22px);
+        }
+
+        ul {
+          li {
+            list-style-type: none;
+            font-weight: 400;
+            font-size: rem(20px);
+            line-height: 120%;
+            margin-bottom: rem(32px);
+
+            position: relative;
+            padding-left: rem(26px);
+
+            &::before {
+              position: absolute;
+              top: rem(2px);
+              left: 0;
+              content: url("data:image/svg+xml,%3Csvg width='10' height='16' viewBox='0 0 10 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cg clip-path='url(%23clip0_1_137)'%3E%3Cpath d='M6.02156 1.20215L2.95215 16.8308H6.23298L9.3024 1.20215H6.02156Z' fill='%23232A40'/%3E%3Cpath d='M3.06787 1.20215L0 16.8308H1.96912L5.03699 1.20215H3.06787Z' fill='%23232A40'/%3E%3C/g%3E%3Cdefs%3E%3CclipPath id='clip0_1_137'%3E%3Crect width='10' height='15.6286' fill='white'/%3E%3C/clipPath%3E%3C/defs%3E%3C/svg%3E%0A");
+            }
+          }
+        }
+      }
+
+      .ff-item-3 {
+        grid-row: 1/3;
+        grid-column: 2/3;
+      }
+    }
+  }
+}
 
 // Footer
 
