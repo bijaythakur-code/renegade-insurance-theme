@@ -20,8 +20,6 @@
                 <img src="<?php echo get_template_directory_uri(); ?>/assets/images/temp/hero-image.jpg" alt="Hero Image">
               </div>
             </div>
-
-
           </div>
         </div>
 
@@ -58,7 +56,7 @@
         <div class="sec-wrap rgi-container">
 
           <div class="c-left">
-            <p>Work for yourself, not for someone else.</p>
+            <span>Work for yourself, not for someone else.</span>
           </div>
 
           <div class="c-right">
@@ -261,6 +259,36 @@
         </div>
       </section>
 
+      <!-- Section 6 Banner text -->
+      <section class="rgi-home-sec-6">
+        <div class="sec-wrap rgi-container">
+          <span>We Are Looking Forward To Getting To Know You!</span>
+
+          <p>Start Revolutionizing The World Of Insurance Services By Filling Out Our Contact Form Below. <a href="#"><strong>Get Started.</strong></a> </p>
+
+        </div>
+      </section>
+
+      <!--  Section 7 Contact form section -->
+      <section class="rgi-home-sec-7-form">
+        <div class="sec-wrap rgi-container">
+          <div class="form-left">
+            <h2>Contact Form</h2>
+            <?php
+            echo do_shortcode('[contact-form-7 id="686227f" title="RGI Contact Form"]');
+            ?>
+
+            <p>This is not a franchise offering. A Franchise offering can be made by us only in a state if we are first registered, excluded, exempt, or otherwise qualified to offer franchises in that state, and only if we provide you with an appropriate franchise disclosure document. </p>
+          </div>
+          <div class="img-right">
+            <div class="img-right-w">
+              <div class="right-img-c">
+                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/temp/contact-form-img.png" alt="Contact image">
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
 
     </main>
   </div>

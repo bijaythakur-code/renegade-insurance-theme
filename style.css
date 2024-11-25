@@ -491,7 +491,8 @@ button {
     .rgi-home-sec-3 .sec-wrap .c-left {
       display: flex;
       padding-top: 5.875rem; }
-      .rgi-home-sec-3 .sec-wrap .c-left p {
+      .rgi-home-sec-3 .sec-wrap .c-left span {
+        display: block;
         font-weight: 700;
         font-size: 3rem;
         line-height: 120%;
@@ -688,6 +689,122 @@ button {
     .rgi-home-sec-5 .sec-5-wrap .franchise-facts-wrap .ff-item-3 {
       grid-row: 1/3;
       grid-column: 2/3; }
+
+.rgi-home-sec-6 {
+  background-color: #232a40;
+  height: 19.0625rem; }
+  .rgi-home-sec-6 .sec-wrap {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1.375rem;
+    height: 100%; }
+    .rgi-home-sec-6 .sec-wrap span {
+      display: block;
+      font-weight: 700;
+      font-size: 3rem;
+      line-height: 120%;
+      text-transform: capitalize;
+      color: #f5f5f5;
+      text-align: center; }
+    .rgi-home-sec-6 .sec-wrap p {
+      font-size: 1.5rem;
+      line-height: 144%;
+      text-align: center;
+      color: #ffffff; }
+      .rgi-home-sec-6 .sec-wrap p a {
+        color: #f5f5f5; }
+
+.rgi-home-sec-7-form .sec-wrap {
+  padding-top: 5.25rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2.5rem; }
+  .rgi-home-sec-7-form .sec-wrap .form-left {
+    display: flex;
+    flex-direction: column;
+    max-width: 50%; }
+    .rgi-home-sec-7-form .sec-wrap .form-left h2 {
+      font-weight: 600;
+      font-size: 3rem;
+      line-height: 120%;
+      text-transform: capitalize;
+      margin-bottom: 2.75rem; }
+    .rgi-home-sec-7-form .sec-wrap .form-left form {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem; }
+      .rgi-home-sec-7-form .sec-wrap .form-left form .two-col {
+        display: flex;
+        gap: 0.75rem; }
+      .rgi-home-sec-7-form .sec-wrap .form-left form .rgi-form-field {
+        background: #ffffff;
+        border: 1px solid #232a40;
+        border-radius: 0.5rem;
+        padding: 0.625rem 1rem;
+        height: 60px; }
+        .rgi-home-sec-7-form .sec-wrap .form-left form .rgi-form-field label {
+          font-size: 0.875rem;
+          line-height: 1.21; }
+        .rgi-home-sec-7-form .sec-wrap .form-left form .rgi-form-field input {
+          width: 100%;
+          font-weight: 500;
+          font-size: 1.125rem;
+          line-height: 120%;
+          height: 22px;
+          color: #232a40;
+          border: none; }
+          .rgi-home-sec-7-form .sec-wrap .form-left form .rgi-form-field input:focus {
+            border: none;
+            outline: none; }
+      .rgi-home-sec-7-form .sec-wrap .form-left form .form-submit {
+        margin-top: 1.875rem;
+        width: fit-content;
+        position: relative; }
+        .rgi-home-sec-7-form .sec-wrap .form-left form .form-submit p {
+          width: fit-content; }
+          .rgi-home-sec-7-form .sec-wrap .form-left form .form-submit p input[type='submit'] {
+            cursor: pointer;
+            display: block;
+            background-color: #232a40;
+            border-radius: 6.25rem;
+            height: 2.8125rem;
+            font-size: 1.125rem;
+            line-height: 125%;
+            font-weight: 600;
+            padding: 0 7.5rem 0 2rem;
+            border: none;
+            color: #f5f5f5; }
+        .rgi-home-sec-7-form .sec-wrap .form-left form .form-submit::after {
+          position: absolute;
+          top: 0.625rem;
+          right: 1.375rem;
+          content: url("data:image/svg+xml,%3Csvg width='16' height='8' viewBox='0 0 16 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M15.3536 4.35355C15.5488 4.15829 15.5488 3.84171 15.3536 3.64645L12.1716 0.464466C11.9763 0.269204 11.6597 0.269204 11.4645 0.464466C11.2692 0.659728 11.2692 0.976311 11.4645 1.17157L14.2929 4L11.4645 6.82843C11.2692 7.02369 11.2692 7.34027 11.4645 7.53553C11.6597 7.7308 11.9763 7.7308 12.1716 7.53553L15.3536 4.35355ZM0 4.5H15V3.5H0V4.5Z' fill='%23F5F5F5'/%3E%3C/svg%3E%0A"); }
+    .rgi-home-sec-7-form .sec-wrap .form-left > p {
+      font-size: 0.75rem;
+      line-height: 125%;
+      opacity: 0.5; }
+  .rgi-home-sec-7-form .sec-wrap .img-right .img-right-w {
+    position: relative;
+    width: 140%; }
+    .rgi-home-sec-7-form .sec-wrap .img-right .img-right-w .right-img-c {
+      position: relative;
+      overflow: hidden; }
+      .rgi-home-sec-7-form .sec-wrap .img-right .img-right-w .right-img-c::before {
+        content: '';
+        position: absolute;
+        left: -30%;
+        top: 50%;
+        transform: translateY(-46%) rotate(14deg);
+        background: #ffffff;
+        width: 40%;
+        height: 140%; }
+      .rgi-home-sec-7-form .sec-wrap .img-right .img-right-w .right-img-c img {
+        width: 105%;
+        object-fit: cover;
+        height: 100%; }
 
 .site-footer {
   background-color: #232a40;

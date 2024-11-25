@@ -16,3 +16,28 @@
     right: rem(22px);
   }
 }
+
+@mixin span-banner-txt() {
+  display: block;
+  font-weight: 700;
+  font-size: rem(48px);
+  line-height: 120%;
+  text-transform: capitalize;
+  color: $renegade-white;
+}
+
+@mixin angle-background($bg-color: $renegade-white) {
+  position: relative;
+  overflow: hidden;
+
+  &::before {
+    content: '';
+    position: absolute;
+    left: -30%;
+    top: 50%;
+    transform: translateY(-46%) rotate(14deg);
+    background: $bg-color;
+    width: 40%;
+    height: 140%;
+  }
+}
