@@ -69,6 +69,85 @@
         </div>
       </section>
 
+      <!-- section 4 Testimonial Slider -->
+
+      <section class="rgi-home-sec-4-sl">
+
+        <div class="sec-4-wrap rgi-container">
+
+          <h2>Feel the love - Customer Success Stories</h2>
+
+          <div class="slider-wrap">
+            <div class="slider-item">
+              <div class="sl-item-left">
+                <p>“Great experience working with Cindy on my business policy! She knew exactly what type of coverages I needed. She was thorough and knowledgeable! Even my staff have gone to her with their insurance (I own a small salon that my staff are independent contractors) and she’s assisted them all with their own policies. Truly appreciate her!”</p>
+                <h3>-Lela Smith 1</h3>
+              </div>
+
+              <div class="sl-item-right">
+                <div class="right-wrap">
+                  <div class="img-c">
+                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/temp/testimonial-img.jpg" alt="Testimonial Image">
+                  </div>
+                </div>
+
+              </div>
+            </div>
+
+            <div class="slider-item">
+              <div class="sl-item-left">
+                <p>“Great experience working with Cindy on my business policy! She knew exactly what type of coverages I needed. She was thorough and knowledgeable! Even my staff have gone to her with their insurance (I own a small salon that my staff are independent contractors) and she’s assisted them all with their own policies. Truly appreciate her!”</p>
+                <h3>-Lela Smith 2</h3>
+              </div>
+
+              <div class="sl-item-right">
+                <div class="right-wrap">
+                  <div class="img-c">
+                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/temp/testimonial-img.jpg" alt="Testimonial Image">
+                  </div>
+                </div>
+
+              </div>
+            </div>
+
+            <div class="slider-item">
+              <div class="sl-item-left">
+                <p>“Great experience working with Cindy on my business policy! She knew exactly what type of coverages I needed. She was thorough and knowledgeable! Even my staff have gone to her with their insurance (I own a small salon that my staff are independent contractors) and she’s assisted them all with their own policies. Truly appreciate her!”</p>
+                <h3>-Lela Smith 3</h3>
+              </div>
+
+              <div class="sl-item-right">
+                <div class="right-wrap">
+                  <div class="img-c">
+                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/temp/testimonial-img.jpg" alt="Testimonial Image">
+                  </div>
+                </div>
+
+              </div>
+            </div>
+
+            <div class="slider-item">
+              <div class="sl-item-left">
+                <p>“Great experience working with Cindy on my business policy! She knew exactly what type of coverages I needed. She was thorough and knowledgeable! Even my staff have gone to her with their insurance (I own a small salon that my staff are independent contractors) and she’s assisted them all with their own policies. Truly appreciate her!”</p>
+                <h3>-Lela Smith 4</h3>
+              </div>
+
+              <div class="sl-item-right">
+                <div class="right-wrap">
+                  <div class="img-c">
+                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/temp/testimonial-img.jpg" alt="Testimonial Image">
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+
+      </section>
+
 
 
     </main>
