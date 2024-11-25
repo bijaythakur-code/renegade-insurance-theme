@@ -4,20 +4,46 @@
     <main id="main" class="site-main">
 
       <!-- Hero Section -->
+
+      <?php
+      $sec_1_hero_banner_title = get_field('hero_banner_title');
+      $sec_1_hero_banner_subtitle = get_field('hero_banner_subtitle');
+      $sec_1_hero_banner_image_id = get_field('hero_banner_image'); // Returns the image ID
+
+      ?>
+
+
       <section class="rgi-hero">
         <div class="rgi-hero-wrap rgi-container">
           <div class="hero-left">
-            <h1>Launch your own
-              insurance franchise
-              with a framework
-              for success.</h1>
-            <p>Step Into a Highly Profitable, Low Investment Opportunity.</p>
+
+            <?php if ($sec_1_hero_banner_title): ?>
+              <h1><?php echo esc_html($sec_1_hero_banner_title); ?></h1>
+            <?php endif; ?>
+
+            <?php if ($sec_1_hero_banner_subtitle): ?>
+              <p><?php echo esc_html($sec_1_hero_banner_subtitle); ?></p>
+            <?php endif; ?>
             </p>
           </div>
           <div class="hero-right">
             <div class="hero-right-w">
               <div class="hero-right-img-c">
-                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/temp/hero-image.jpg" alt="Hero Image">
+                <?php
+                if (!empty($sec_1_hero_banner_image_id)):
+                  $image_url = wp_get_attachment_image_src($sec_1_hero_banner_image_id, 'full')[0];
+                  $srcset = wp_get_attachment_image_srcset($sec_1_hero_banner_image_id, 'full');
+                  $sizes = wp_get_attachment_image_sizes($sec_1_hero_banner_image_id, 'full');
+                  $alt_text = get_post_meta($sec_1_hero_banner_image_id, '_wp_attachment_image_alt', true);
+                ?>
+                  <img
+                    src="<?php echo esc_url($image_url); ?>"
+                    srcset="<?php echo esc_attr($srcset); ?>"
+                    sizes="<?php echo esc_attr($sizes); ?>"
+                    alt="<?php echo esc_attr($alt_text ?: 'Hero Image'); ?>">
+                <?php else: ?>
+                  <img src="<?php echo get_template_directory_uri(); ?>/assets/images/placeholder.png" alt="Placeholder Image">
+                <?php endif; ?>
               </div>
             </div>
           </div>
