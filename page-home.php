@@ -296,30 +296,97 @@
       </section>
 
       <!-- Section 6 Banner text -->
+
+      <?php
+      $section_6_banner_title = get_field('section_6_banner_title');
+      $section_6_banner_sub_text = get_field('section_6_banner_sub_text');
+      $section_6_link_text = get_field('section_6_link_text');
+      $section_6_link_url = get_field('section_6_link_url');
+
+      // Extract the URL from the array and set a default if empty
+      $sec_6_link_url_extracted = !empty($section_6_link_url['url']) ? $section_6_link_url['url'] : '#';
+
+      ?>
+
       <section class="rgi-home-sec-6">
         <div class="sec-wrap rgi-container">
-          <span>We Are Looking Forward To Getting To Know You!</span>
+          <!-- Banner Title -->
+          <span>
+            <?php echo !empty($section_6_banner_title)
+              ? esc_html($section_6_banner_title)
+              : esc_html__('Please type some text here', 'renegade-insurance'); ?>
+          </span>
 
-          <p>Start Revolutionizing The World Of Insurance Services By Filling Out Our Contact Form Below. <a href="#"><strong>Get Started.</strong></a> </p>
+          <!-- Subtext with Link -->
+          <p>
+            <?php echo !empty($section_6_banner_sub_text)
+              ? esc_html($section_6_banner_sub_text)
+              : esc_html__('Please type some text here', 'renegade-insurance'); ?>
+
+            <!-- Link -->
+            <a href="<?php echo esc_url($sec_6_link_url_extracted); ?>">
+              <strong>
+                <?php echo !empty($section_6_link_text)
+                  ? esc_html($section_6_link_text)
+                  : esc_html__('Link Text', 'renegade-insurance'); ?>
+              </strong>
+            </a>
+          </p>
 
         </div>
       </section>
 
       <!--  Section 7 Contact form section -->
+
+      <?php
+      $section_7_contact_form_heading = get_field('section_7_contact_form_heading');
+      $section_7_contact_form_disclaimer = get_field('section_7_contact_form_disclaimer');
+      $section_7_contact_form_right_image = get_field('section_7_contact_form_right_image');
+
+      ?>
+
       <section class="rgi-home-sec-7-form">
         <div class="sec-wrap rgi-container">
           <div id="rgi-contact-form" class="form-left">
-            <h2>Contact Form</h2>
+
+            <!-- Heading -->
+            <?php if ($section_7_contact_form_heading): ?>
+              <h2><?php echo esc_html($section_7_contact_form_heading); ?></h2>
+            <?php else: ?>
+              <h2><?php esc_html_e('Please type heading text here', 'renegade-insurance'); ?></h2>
+            <?php endif; ?>
+
+            <!-- Contact form 7 Shortcode -->
             <?php
             echo do_shortcode('[contact-form-7 id="686227f" title="RGI Contact Form"]');
             ?>
 
-            <p>This is not a franchise offering. A Franchise offering can be made by us only in a state if we are first registered, excluded, exempt, or otherwise qualified to offer franchises in that state, and only if we provide you with an appropriate franchise disclosure document. </p>
+            <!-- Disclaimer -->
+            <p>
+              <?php echo !empty($section_7_contact_form_disclaimer)
+                ? esc_html($section_7_contact_form_disclaimer)
+                : esc_html__('Please type disclaimer text here', 'renegade-insurance'); ?>
+            </p>
+
           </div>
           <div class="img-right">
             <div class="img-right-w">
               <div class="right-img-c">
-                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/temp/contact-form-img.png" alt="Contact image">
+
+                <?php if (!empty($section_7_contact_form_right_image)): ?>
+                  <?php
+                  echo wp_get_attachment_image(
+                    $section_7_contact_form_right_image,
+                    'full', // Image size
+                    false, // Icon
+                    array('alt' => esc_attr__('Contact Image', 'renegade-insurance')) // Alt text
+                  );
+                  ?>
+                <?php else: ?>
+                  <!-- Fallback Placeholder -->
+                  <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/placeholder.png'); ?>" alt="<?php esc_attr_e('Default Contact Image', 'renegade-insurance'); ?>">
+                <?php endif; ?>
+
               </div>
             </div>
           </div>
