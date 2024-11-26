@@ -111,8 +111,6 @@
           </div>
 
           <div class="c-right">
-            <!-- <button>Be a Renegade</button> -->
-
 
             <a href="<?php echo esc_url(!empty($sec_3_button_url) ? $sec_3_button_url : '#'); ?>" class="button">
               <?php echo !empty($sec_3_button_txt) ? esc_html($sec_3_button_txt) : esc_html__('Button text', 'renegade-insurance'); ?>
@@ -127,77 +125,82 @@
 
       <!-- section 4 Testimonial Slider -->
 
+      <?php
+      $sec_4_slider_heading = get_field('section_4_slider_heading');
+      ?>
+
       <section class="rgi-home-sec-4-sl">
 
         <div class="sec-4-wrap rgi-container">
 
-          <h2>Feel the love - Customer Success Stories</h2>
+          <!-- Section Heading -->
+          <?php if ($sec_4_slider_heading): ?>
+            <h2><?php echo esc_html($sec_4_slider_heading); ?></h2>
+          <?php else: ?>
+            <h2><?php esc_html_e('Please type heading text here', 'renegade-insurance'); ?></h2>
+          <?php endif; ?>
 
-          <div class="slider-wrap">
-            <div class="slider-item">
-              <div class="sl-item-left">
-                <p>“Great experience working with Cindy on my business policy! She knew exactly what type of coverages I needed. She was thorough and knowledgeable! Even my staff have gone to her with their insurance (I own a small salon that my staff are independent contractors) and she’s assisted them all with their own policies. Truly appreciate her!”</p>
-                <h3>-Lela Smith 1</h3>
-              </div>
+          <?php
+          // Query Testimonials CPT
+          $testimonials = new WP_Query(array(
+            'posts_per_page' => -1,
+            'post_type' => 'testimonial',
+            'orderby' => 'title',
+            'order' => 'ASC'
+          ));
 
-              <div class="sl-item-right">
-                <div class="right-wrap">
-                  <div class="img-c">
-                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/temp/testimonial-img.jpg" alt="Testimonial Image">
+          if ($testimonials->have_posts()): ?>
+
+            <div class="slider-wrap">
+
+              <?php
+              while ($testimonials->have_posts()):
+                $testimonials->the_post();
+
+                $testimonial_description = get_field('testimonial_description');
+                $person_image = get_field('person_image'); // // Returns the image ID
+              ?>
+
+                <div class="slider-item">
+                  <div class="sl-item-left">
+
+                    <!-- Testimonial Description -->
+                    <?php if (!empty($testimonial_description)): ?>
+                      <p><?php echo esc_html($testimonial_description); ?></p>
+                    <?php else: ?>
+                      <p><?php esc_html_e('No testimonial description available.', 'renegade-insurance'); ?></p>
+                    <?php endif; ?>
+
+                    <!-- Title -->
+                    <h3>- <?php echo esc_html(get_the_title() ? get_the_title() : esc_html__('Anonymous', 'renegade-insurance')); ?></h3>
+                  </div>
+
+                  <div class="sl-item-right">
+                    <div class="right-wrap">
+                      <div class="img-c">
+                        <!-- Person Image -->
+                        <?php if (!empty($person_image)): ?>
+
+                          <img src="<?php echo esc_url(wp_get_attachment_image_url($person_image, 'medium')); ?>"
+                            srcset="<?php echo esc_attr(wp_get_attachment_image_srcset($person_image, 'medium')); ?>"
+                            sizes="(max-width: 768px) 100vw, 50vw"
+                            alt="<?php the_title_attribute(); ?>">
+                        <?php else: ?>
+                          <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/temp/testimonial-img.jpg'); ?>"
+                            alt="<?php esc_attr_e('Default Testimonial Image', 'renegade-insurance'); ?>">
+                        <?php endif; ?>
+                      </div>
+                    </div>
                   </div>
                 </div>
-
-              </div>
+              <?php endwhile; ?>
             </div>
+          <?php else: ?>
+            <p><?php esc_html_e('No testimonials found.', 'renegade-insurance'); ?></p>
+          <?php endif; ?>
 
-            <div class="slider-item">
-              <div class="sl-item-left">
-                <p>“Great experience working with Cindy on my business policy! She knew exactly what type of coverages I needed. She was thorough and knowledgeable! Even my staff have gone to her with their insurance (I own a small salon that my staff are independent contractors) and she’s assisted them all with their own policies. Truly appreciate her!”</p>
-                <h3>-Lela Smith 2</h3>
-              </div>
+          <?php wp_reset_postdata(); ?>
 
-              <div class="sl-item-right">
-                <div class="right-wrap">
-                  <div class="img-c">
-                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/temp/testimonial-img.jpg" alt="Testimonial Image">
-                  </div>
-                </div>
-
-              </div>
-            </div>
-
-            <div class="slider-item">
-              <div class="sl-item-left">
-                <p>“Great experience working with Cindy on my business policy! She knew exactly what type of coverages I needed. She was thorough and knowledgeable! Even my staff have gone to her with their insurance (I own a small salon that my staff are independent contractors) and she’s assisted them all with their own policies. Truly appreciate her!”</p>
-                <h3>-Lela Smith 3</h3>
-              </div>
-
-              <div class="sl-item-right">
-                <div class="right-wrap">
-                  <div class="img-c">
-                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/temp/testimonial-img.jpg" alt="Testimonial Image">
-                  </div>
-                </div>
-
-              </div>
-            </div>
-
-            <div class="slider-item">
-              <div class="sl-item-left">
-                <p>“Great experience working with Cindy on my business policy! She knew exactly what type of coverages I needed. She was thorough and knowledgeable! Even my staff have gone to her with their insurance (I own a small salon that my staff are independent contractors) and she’s assisted them all with their own policies. Truly appreciate her!”</p>
-                <h3>-Lela Smith 4</h3>
-              </div>
-
-              <div class="sl-item-right">
-                <div class="right-wrap">
-                  <div class="img-c">
-                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/temp/testimonial-img.jpg" alt="Testimonial Image">
-                  </div>
-                </div>
-
-              </div>
-            </div>
-          </div>
         </div>
 
       </section>
