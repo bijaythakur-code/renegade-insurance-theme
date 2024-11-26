@@ -145,8 +145,11 @@ Tags: custom-menu, custom-logo, featured-images
       display: flex;
       align-items: center;
 
-      button {
+      .button {
         @include rgi-button($renegade-pink, $renegade-blue);
+        display: flex;
+        align-items: center;
+        text-decoration: none;
 
         &::after {
           position: absolute;

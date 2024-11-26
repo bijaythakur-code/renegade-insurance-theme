@@ -19,12 +19,16 @@
 
             <?php if ($sec_1_hero_banner_title): ?>
               <h1><?php echo esc_html($sec_1_hero_banner_title); ?></h1>
+            <?php else: ?>
+              <h1><?php esc_html_e('Please type some title here', 'renegade-insurance'); ?></h1>
             <?php endif; ?>
 
             <?php if ($sec_1_hero_banner_subtitle): ?>
               <p><?php echo esc_html($sec_1_hero_banner_subtitle); ?></p>
+            <?php else: ?>
+              <p><?php esc_html_e('Please type some sub-title here', 'renegade-insurance'); ?></p>
             <?php endif; ?>
-            </p>
+
           </div>
           <div class="hero-right">
             <div class="hero-right-w">
@@ -52,25 +56,35 @@
       </section>
 
       <!-- Section 2  -->
+      <?php
+      $sec_2_banner_left_txt = get_field('banner_left_text');
+      $sec_2_banner_right_txt = get_field('banner_right_text');
+      $sec_2_banner_read_more_txt = get_field('read_more_text');
+      $sec_2_banner_read_more_url = get_field('read_more_url');
+
+      ?>
 
       <section class="rgi-home-sec-2">
         <div class="sec-wrap rgi-container">
           <div class="c-left">
-            <p>Renegade Insurance has developed
-              a brand that fills the rapidly increasing
-              demand for insurance services that work seamlessly in different demographic markets.</p>
+            <?php if (!empty($sec_2_banner_left_txt)): ?>
+              <?php echo wp_kses_post($sec_2_banner_left_txt); ?>
+            <?php else: ?>
+              <p><?php esc_html_e('Please type some text here.', 'renegade-insurance'); ?></p>
+            <?php endif; ?>
           </div>
 
           <div class="c-right">
 
-            <p>With a perfected business model that brings polished technology along with brokerage prowess that includes 90+ leading carriers,
-              we can provide you with an array of full-scale options for your
-              clients to choose what works best for them. Now, our growing
-              market requires new offices and insurance professionals to reach even more regions across the country.
+            <?php if (!empty($sec_2_banner_right_txt)): ?>
+              <?php echo wp_kses_post($sec_2_banner_right_txt); ?>
+            <?php else: ?>
+              <p><?php esc_html_e('Please type some text here', 'renegade-insurance'); ?></p>
+            <?php endif; ?>
 
-            </p>
-
-            <a href="#" class="read-more-btn">Read More</a>
+            <a href="<?php echo esc_url(!empty($sec_2_banner_read_more_url) ? $sec_2_banner_read_more_url : '#'); ?>" class="read-more-btn">
+              <?php echo !empty($sec_2_banner_read_more_txt) ? esc_html($sec_2_banner_read_more_txt) : esc_html__('Read More', 'renegade-insurance'); ?>
+            </a>
 
           </div>
         </div>
@@ -78,15 +92,33 @@
 
       <!-- section 3 -->
 
+      <?php
+      $sec_3_banner_txt = get_field('section_3_banner_text');
+      $sec_3_button_txt = get_field('section_3_button_text');
+      $sec_3_button_url = get_field('section_3_button_link');
+
+      ?>
+
       <section class="rgi-home-sec-3">
         <div class="sec-wrap rgi-container">
 
           <div class="c-left">
-            <span>Work for yourself, not for someone else.</span>
+            <?php if (!empty($sec_3_banner_txt)): ?>
+              <span><?php echo esc_html($sec_3_banner_txt); ?></span>
+            <?php else: ?>
+              <span><?php esc_html_e('Please type some text here', 'renegade-insurance'); ?></span>
+            <?php endif; ?>
           </div>
 
           <div class="c-right">
-            <button>Be a Renegade</button>
+            <!-- <button>Be a Renegade</button> -->
+
+
+            <a href="<?php echo esc_url(!empty($sec_3_button_url) ? $sec_3_button_url : '#'); ?>" class="button">
+              <?php echo !empty($sec_3_button_txt) ? esc_html($sec_3_button_txt) : esc_html__('Button text', 'renegade-insurance'); ?>
+            </a>
+
+
           </div>
 
 
