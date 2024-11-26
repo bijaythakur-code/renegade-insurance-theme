@@ -319,9 +319,12 @@ Tags: custom-menu, custom-logo, featured-images
           margin-top: rem(35px);
         }
 
-        button {
+        .button {
           margin-top: auto;
           margin-bottom: rem(40px);
+          display: flex;
+          align-items: center;
+          text-decoration: none;
           @include rgi-button($renegade-blue, $renegade-white);
 
           &::after {

@@ -157,43 +157,9 @@
               while ($testimonials->have_posts()):
                 $testimonials->the_post();
 
-                $testimonial_description = get_field('testimonial_description');
-                $person_image = get_field('person_image'); // // Returns the image ID
-              ?>
+                get_template_part('template-parts/content', 'testimonial');
 
-                <div class="slider-item">
-                  <div class="sl-item-left">
-
-                    <!-- Testimonial Description -->
-                    <?php if (!empty($testimonial_description)): ?>
-                      <p><?php echo esc_html($testimonial_description); ?></p>
-                    <?php else: ?>
-                      <p><?php esc_html_e('No testimonial description available.', 'renegade-insurance'); ?></p>
-                    <?php endif; ?>
-
-                    <!-- Title -->
-                    <h3>- <?php echo esc_html(get_the_title() ? get_the_title() : esc_html__('Anonymous', 'renegade-insurance')); ?></h3>
-                  </div>
-
-                  <div class="sl-item-right">
-                    <div class="right-wrap">
-                      <div class="img-c">
-                        <!-- Person Image -->
-                        <?php if (!empty($person_image)): ?>
-
-                          <img src="<?php echo esc_url(wp_get_attachment_image_url($person_image, 'medium')); ?>"
-                            srcset="<?php echo esc_attr(wp_get_attachment_image_srcset($person_image, 'medium')); ?>"
-                            sizes="(max-width: 768px) 100vw, 50vw"
-                            alt="<?php the_title_attribute(); ?>">
-                        <?php else: ?>
-                          <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/temp/testimonial-img.jpg'); ?>"
-                            alt="<?php esc_attr_e('Default Testimonial Image', 'renegade-insurance'); ?>">
-                        <?php endif; ?>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              <?php endwhile; ?>
+              endwhile; ?>
             </div>
           <?php else: ?>
             <p><?php esc_html_e('No testimonials found.', 'renegade-insurance'); ?></p>
@@ -209,111 +175,120 @@
 
       <section class="rgi-home-sec-5">
         <div class="sec-5-wrap ">
-          <h2 class="rgi-container">The Franchise Process</h2>
 
-          <div class="process-wrap">
-            <div class="process-item">
-              <span class="number">1</span>
-              <h3>Introduction</h3>
-              <p>Complete the form below and we will reach out to provide you with more information.</p>
+          <?php $sec_5_fp_heading = get_field('section_5_franchise_process_heading'); ?>
 
-              <button>Contact Form</button>
+          <!-- Section Heading -->
+          <?php if ($sec_5_fp_heading): ?>
+            <h2 class="rgi-container"><?php echo esc_html($sec_5_fp_heading); ?></h2>
+          <?php else: ?>
+            <h2 class="rgi-container"><?php esc_html_e('Please type heading text here', 'renegade-insurance'); ?></h2>
+          <?php endif; ?>
+
+          <?php
+          // Query Franchise Process CPT
+          $franchise_processes = new WP_Query(array(
+            'posts_per_page' => -1,
+            'post_type' => 'franchise-process',
+            'orderby' => 'title',
+            'order' => 'ASC'
+          ));
+
+          if ($franchise_processes->have_posts()): ?>
+
+            <div class="process-wrap">
+
+              <?php
+              while ($franchise_processes->have_posts()):
+                $franchise_processes->the_post();
+
+                get_template_part('template-parts/content', 'franchise-process');
+
+              endwhile; ?>
             </div>
 
-            <div class="process-item">
-              <span class="number">2</span>
-              <h3>Kick Off</h3>
-              <p>We will schedule an in-person or riemote meeting to review your application and discuss details as we begin our partnership.</p>
-            </div>
+          <?php else: ?>
+            <p class="rgi-container"><?php esc_html_e('No franchise processes found.', 'renegade-insurance'); ?></p>
+          <?php endif; ?>
 
-            <div class="process-item">
-              <span class="number">3</span>
-              <h3>Discovery Day</h3>
-              <p>Our franchise development representative will schedule your visit to our corporate location. Here, we will review detailed information on our business model, support, and marketing and Tools Available </p>
+          <?php wp_reset_postdata(); ?>
 
+          <!-- <h2 class="rgi-container">Franchise Facts</h2> -->
+          <!-- Heading -->
+          <?php $sec_5_franchise_facts_heading = get_field('section_5_franchise_facts_heading'); ?>
 
-            </div>
-
-            <div class="process-item">
-              <span class="number">4</span>
-              <h3>Training</h3>
-              <p>Our leadership team will train you and your team to prepare you to establish and operate your own Renegade Insurance franchise. </p>
-            </div>
-          </div>
-          <h2 class="rgi-container">Franchise Facts</h2>
+          <?php if ($sec_5_franchise_facts_heading): ?>
+            <h2 class="rgi-container"><?php echo esc_html($sec_5_franchise_facts_heading); ?></h2>
+          <?php else: ?>
+            <h2 class="rgi-container"><?php esc_html_e('Please type heading text here', 'renegade-insurance'); ?></h2>
+          <?php endif; ?>
 
           <div class="franchise-facts-wrap rgi-container">
-            <div class="ff-item ff-item-1">
-              <h3>Forget High Franchise Fees:</h3>
 
-              <ul>
-                <li>
-                  <strong>Initial Franchise Fee:</strong><br>
-                  $20,000
-                </li>
-                <li>
-                  <strong>Minimum Estimated Cost:</strong><br>
-                  $51,900 including franchise fee
-                </li>
-              </ul>
+            <?php
+            $franchise_facts_container_1_heading = get_field('franchise_facts_container_1_heading');
+            $franchise_facts_container_1_content = get_field('franchise_facts_container_1_content');
+            $franchise_facts_container_2_heading = get_field('franchise_facts_container_2_heading');
+            $franchise_facts_container_2_content = get_field('franchise_facts_container_2_content');
+            $franchise_facts_container_3_heading = get_field('franchise_facts_container_3_heading');
+            $franchise_facts_container_3_content = get_field('franchise_facts_container_3_content');
+
+            // var_dump($franchise_facts_container_1_content);
+
+            ?>
+
+            <div class="ff-item ff-item-1">
+
+              <!-- Container 1 Heading -->
+              <?php if ($franchise_facts_container_1_heading): ?>
+                <h3><?php echo esc_html($franchise_facts_container_1_heading); ?></h3>
+              <?php else: ?>
+                <h3><?php esc_html_e('Please type heading text here', 'renegade-insurance'); ?></h3>
+              <?php endif; ?>
+
+              <!-- Container 1 Content list -->
+              <?php if (!empty($franchise_facts_container_1_content)): ?>
+                <?php echo wp_kses_post($franchise_facts_container_1_content); ?>
+              <?php else: ?>
+                <p><?php esc_html_e('Please type lists here.', 'renegade-insurance'); ?></p>
+              <?php endif; ?>
 
             </div>
 
             <div class="ff-item ff-item-2">
-              <h3>What We Look for In Our Franchisees: </h3>
 
-              <ul>
-                <li>
-                  Entrepreneurial spirit.
-                </li>
-                <li>
-                  Desire for success.
-                </li>
-                <li>
-                  Love of helping customers.
-                </li>
-                <li>
-                  Success in management, sales, and customer service.
-                </li>
-                <li>
-                  The want to put those skills to use in a business of their own, but not on their own.
-                </li>
-              </ul>
+              <!-- Container 2 Heading -->
+              <?php if ($franchise_facts_container_2_heading): ?>
+                <h3><?php echo esc_html($franchise_facts_container_2_heading); ?></h3>
+              <?php else: ?>
+                <h3><?php esc_html_e('Please type heading text here', 'renegade-insurance'); ?></h3>
+              <?php endif; ?>
+
+              <!-- Container 2 Content list -->
+              <?php if (!empty($franchise_facts_container_2_content)): ?>
+                <?php echo wp_kses_post($franchise_facts_container_2_content); ?>
+              <?php else: ?>
+                <p><?php esc_html_e('Please type lists here.', 'renegade-insurance'); ?></p>
+              <?php endif; ?>
 
             </div>
 
             <div class="ff-item ff-item-3">
-              <h3>How We Support Our Franchisees </h3>
+              <!-- Container 3 Heading -->
+              <?php if ($franchise_facts_container_3_heading): ?>
+                <h3><?php echo esc_html($franchise_facts_container_3_heading); ?></h3>
+              <?php else: ?>
+                <h3><?php esc_html_e('Please type heading text here', 'renegade-insurance'); ?></h3>
+              <?php endif; ?>
 
-              <ul>
-                <li>
-                  <strong>Outstanding Training:</strong> Our 2-Week Training.
-                </li>
-
-                <li>
-                  <strong>Program Dives</strong> Into The Details Of Renegade Insurance That Made Us Successful.
-                </li>
-
-                <li>
-                  <strong>Program Dives</strong> Into The Details Of Renegade Insurance That Made Us Successful.
-                </li>
-                <li>
-                  <strong>Program Dives</strong> Into The Details Of Renegade Insurance That Made Us Successful.
-                </li>
-                <li>
-                  <strong>Program Dives</strong> Into The Details Of Renegade Insurance That Made Us Successful.
-                </li>
-                <li>
-                  <strong>Program Dives</strong> Into The Details Of Renegade Insurance That Made Us Successful.
-                </li>
-
-              </ul>
+              <!-- Container 2 Content list -->
+              <?php if (!empty($franchise_facts_container_3_content)): ?>
+                <?php echo wp_kses_post($franchise_facts_container_3_content); ?>
+              <?php else: ?>
+                <p><?php esc_html_e('Please type lists here.', 'renegade-insurance'); ?></p>
+              <?php endif; ?>
 
             </div>
-
-
-
-
 
           </div>
 
@@ -333,7 +308,7 @@
       <!--  Section 7 Contact form section -->
       <section class="rgi-home-sec-7-form">
         <div class="sec-wrap rgi-container">
-          <div class="form-left">
+          <div id="rgi-contact-form" class="form-left">
             <h2>Contact Form</h2>
             <?php
             echo do_shortcode('[contact-form-7 id="686227f" title="RGI Contact Form"]');
