@@ -13,9 +13,40 @@
   <div id="page" class="site">
     <header class="rgi-header">
       <div class="rgi-container">
-        <!-- TODO -->
-        <p>Header 1</p>
-        <p>Header 2</p>
+        <div class="logo">
+          <?php
+          if (has_custom_logo()) {
+            the_custom_logo();
+          } else {
+          ?>
+            <a href="<?php echo esc_url(home_url('/')); ?>"><span><?php bloginfo('name'); ?></span></a>
+          <?php
+          }
+          ?>
+        </div>
+        <nav class="main-menu">
+          <button class="check-button">
+            <div class="menu-icon">
+              <div class="bar1"></div>
+              <div class="bar2"></div>
+              <div class="bar3"></div>
+            </div>
+          </button>
+          <?php wp_nav_menu(array('theme_location' => 'rgi_main_menu', 'depth' => 2)); ?>
+        </nav>
+
+        <a class="header-cta-btn" href="<?php echo esc_url('tel:' . preg_replace('/\s+/', '', get_theme_mod('header_phone_number_text', '+1 707-233-933'))); ?>">
+          <!-- CTA Button Text -->
+          <p class="book-txt">
+            <?php echo esc_html(get_theme_mod('header_cta_button_text', __('Book a consultation', 'renegade-insurance'))); ?>
+          </p>
+          <!-- Phone Number Text -->
+          <p class="phone">
+            <?php echo esc_html(get_theme_mod('header_phone_number_text', __('+1 707-233-933', 'renegade-insurance'))); ?>
+          </p>
+        </a>
+
+
 
       </div>
     </header>

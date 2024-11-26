@@ -1,5 +1,7 @@
 <?php
 
+require get_template_directory() . '/inc/customizer.php';
+
 // Load styles and scripts
 function rgi_load_scripts()
 {
@@ -21,6 +23,9 @@ function rgi_load_scripts()
     // slick init js
     wp_enqueue_script('slick-init-js', get_template_directory_uri() . '/assets/js/slick-init.js', array('slick-js'), null, true);
   }
+
+  // navigation js
+  wp_enqueue_script('navigation-js', get_template_directory_uri() . '/assets/js/navigation.js', array(), null, true);
 }
 add_action('wp_enqueue_scripts', 'rgi_load_scripts');
 
