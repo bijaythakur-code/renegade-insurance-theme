@@ -120,3 +120,42 @@ function change_title_placeholder($title)
 
   return $title;
 }
+
+
+// Theme Configuration for Renegade Insurance Them
+function rgi_theme_config()
+{
+
+  register_nav_menus(
+    array(
+      'rgi_main_menu' => esc_html__('Main Menu', 'renegade-insurance')
+    )
+  );
+
+  add_theme_support('post-thumbnails');
+  add_theme_support('custom-logo', array(
+    'width' => 200,
+    'height'    => 110,
+    'flex-height'   => true,
+    'flex-width'    => true
+  ));
+  add_theme_support('automatic-feed-links');
+  add_theme_support('html5', array('comment-list', 'comment-form', 'search-form', 'gallery', 'caption', 'style', 'script'));
+
+  // Enable dynamic generation of the <title> tag by WordPress
+  add_theme_support('title-tag');
+}
+add_action('after_setup_theme', 'rgi_theme_config', 0);
+
+/**
+ * Fallback for the `wp_body_open` function for backward compatibility.
+ * 
+ * This function ensures older versions of WordPress (pre-5.2) can still use
+ * the `wp_body_open` hook to insert additional content at the beginning of the <body> tag.
+ */
+if (! function_exists('wp_body_open')) {
+  function wp_body_open()
+  {
+    do_action('wp_body_open');
+  }
+}
