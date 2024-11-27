@@ -1,0 +1,125 @@
+// Footer
+
+.site-footer {
+  background-color: $renegade-blue;
+  padding-top: rem(45px);
+  padding-bottom: rem(73px);
+
+  .footer-wrap {
+    .footer-logo {
+      margin-bottom: rem(34px);
+      img {
+        height: rem(32px);
+        width: auto;
+      }
+    }
+
+    .main-footer {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+
+      .footer-item {
+        margin-bottom: rem(45px);
+        h3 {
+          font-size: rem(16px);
+          font-weight: 600;
+          line-height: 1.2;
+          color: $light-blue;
+          margin-bottom: rem(22px);
+        }
+
+        .menu {
+          li {
+            margin-bottom: rem(15px);
+            a {
+              font-size: rem(14px);
+              line-height: 120%;
+              color: $renegade-white;
+              text-decoration: none;
+            }
+          }
+        }
+      }
+
+      .footer-item-1 {
+        flex-basis: rem(238px);
+        .email,
+        .tel {
+          font-weight: 400;
+          font-size: rem(14px);
+          line-height: 120%;
+          color: $renegade-white;
+          display: block;
+          text-decoration: none;
+          margin-bottom: rem(20px);
+        }
+
+        .address {
+          font-size: rem(14px);
+          line-height: 135%;
+          color: $renegade-white;
+          margin-bottom: rem(34px);
+        }
+
+        .social-links {
+          display: flex;
+          gap: rem(14px);
+          a {
+            display: block;
+
+            img {
+              width: rem(20px);
+              height: rem(20px);
+            }
+          }
+        }
+      }
+
+      .footer-item-2 {
+        flex-basis: rem(220px);
+      }
+
+      .footer-item-3 {
+        flex-basis: rem(200px);
+      }
+
+      .footer-item-4 {
+        flex-basis: rem(238px);
+        p {
+          font-size: rem(14px);
+          line-height: 150%;
+          color: $renegade-white;
+          margin-bottom: rem(32px);
+        }
+
+        img {
+          height: rem(41px);
+          width: auto;
+        }
+      }
+
+      .footer-item-5 {
+        flex-basis: rem(245px);
+        p {
+          font-size: rem(14px);
+          line-height: 150%;
+          color: $renegade-white;
+          margin-bottom: rem(24px);
+        }
+
+        img {
+          height: rem(59px);
+          width: auto;
+        }
+      }
+    }
+
+    .copyright p {
+      font-size: rem(14px);
+      line-height: 106%;
+      color: $renegade-white;
+      opacity: 0.5;
+    }
+  }
+}
