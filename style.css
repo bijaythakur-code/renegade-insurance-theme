@@ -424,6 +424,12 @@ button {
     .rgi-container {
       padding: 0 1rem; } }
 
+.mt-50 {
+  margin-top: 3.125rem; }
+
+.mb-50 {
+  margin-bottom: 3.125rem; }
+
 .rgi-header {
   background-color: #f5f5f5;
   padding-top: 2.125rem; }

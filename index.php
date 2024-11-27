@@ -3,8 +3,9 @@
 <div id="content" class="site-content">
   <div id="primary" class="content-area">
     <main id="main" class="site-main">
-      <h1><?php esc_html_e('Blog', 'renegade-insurance') ?></h1>
-      <div class="container">
+
+      <div class="rgi-container mt-50 mb-50">
+        <h1><?php esc_html_e('Blog', 'renegade-insurance') ?></h1>
         <div class="blog-items">
           <?php
           if (have_posts()):

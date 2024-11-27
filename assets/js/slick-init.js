@@ -3,7 +3,7 @@ $ = jQuery
 $(document).ready(function () {
   // testimonial slider
   $('.slider-wrap').slick({
-    autoplay: false,
+    autoplay: true,
     autoplaySpeed: 2000,
     speed: 2000,
     draggable: true,
