@@ -131,9 +131,24 @@ function change_title_placeholder($title)
 function rgi_theme_config()
 {
 
+  // Main Menu
   register_nav_menus(
     array(
       'rgi_main_menu' => esc_html__('Main Menu', 'renegade-insurance')
+    )
+  );
+
+  // Footer Learn More Menu
+  register_nav_menus(
+    array(
+      'rgi_footer_learn_more_menu' => esc_html__('Footer Learn More Menu', 'renegade-insurance')
+    )
+  );
+
+  // Footer Legal Menu
+  register_nav_menus(
+    array(
+      'rgi_footer_legal_menu' => esc_html__('Footer Legal Menu', 'renegade-insurance')
     )
   );
 
