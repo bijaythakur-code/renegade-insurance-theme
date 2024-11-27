@@ -2,20 +2,39 @@
   background-color: $renegade-white;
   padding-top: rem(34px);
 
+  @include medium-screens() {
+    padding-top: rem(27px);
+  }
+
   .rgi-container {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 57px;
+    // height: rem(57px);
 
     .logo {
       img {
         height: rem(57px);
         width: auto;
+
+        // @include medium-screens() {
+
+        // }
       }
 
       @include large-screens() {
+        margin-right: auto;
         order: 1;
+
+        img {
+          height: rem(44px);
+        }
+      }
+
+      @include medium-screens() {
+        img {
+          height: rem(32px);
+        }
       }
     }
 
@@ -52,7 +71,30 @@
       }
 
       @include large-screens() {
-        order: 1;
+        margin-right: rem(20px);
+        order: 2;
+        height: rem(40px);
+
+        &::before {
+          top: rem(8px);
+        }
+      }
+
+      @include medium-screens() {
+        margin-right: rem(15px);
+        padding: 0;
+        height: rem(45px);
+        width: rem(45px);
+
+        .book-txt,
+        .phone {
+          display: none;
+        }
+
+        &::before {
+          top: rem(10px);
+          left: rem(10px);
+        }
       }
     }
   }
@@ -83,9 +125,17 @@
 }
 .main-menu ul li a {
   color: #000000;
-  padding: 0 30px;
+  padding: 0 rem(40px);
   text-decoration: none;
   display: block;
+
+  @include medium-screens() {
+    padding: 0 rem(20px);
+  }
+
+  @include small-screens() {
+    padding: 0 rem(16px);
+  }
 }
 .main-menu ul li a:hover,
 .main-menu ul li a:active {
@@ -162,7 +212,7 @@
     position: absolute;
     width: 100%;
     background: $renegade-blue;
-    left: -999px;
+    left: -150%;
     text-align: left;
     transition: all cubic-bezier(0.79, 0.14, 0.15, 0.86) 0.5s;
     padding: 0;

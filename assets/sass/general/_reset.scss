@@ -45,6 +45,8 @@ html {
   // HTML resets
   font-family: $global-font-primary;
   line-height: $global-line-height-body;
+
+  overflow-x: hidden;
 }
 
 /**

@@ -10,10 +10,18 @@
   border: none;
   color: $txt-color;
 
+  flex-wrap: nowrap;
+  min-width: max-content;
+
   &::after {
     position: absolute;
     top: rem(10px);
     right: rem(22px);
+  }
+
+  @include medium-screens() {
+    font-size: rem(14px);
+    height: rem(40px);
   }
 }
 

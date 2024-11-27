@@ -196,7 +196,7 @@
 
           if ($franchise_processes->have_posts()): ?>
 
-            <div class="process-wrap">
+            <div class="process-wrap franchise-process-wrapper">
 
               <?php
               while ($franchise_processes->have_posts()):

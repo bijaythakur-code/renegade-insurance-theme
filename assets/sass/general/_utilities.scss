@@ -1,6 +1,22 @@
 // container
 .rgi-container {
-  max-width: $container-width;
-  padding: 0 $container-padding;
+  max-width: unset;
+  padding: 0 rem(120px);
   margin: 0 auto;
+
+  @include container-screen-size() {
+    padding: 0 rem(90px);
+  }
+
+  @include larger-screens() {
+    padding: 0 rem(40px);
+  }
+
+  @include medium-screens() {
+    padding: 0 rem(20px);
+  }
+
+  @include small-screens() {
+    padding: 0 rem(16px);
+  }
 }

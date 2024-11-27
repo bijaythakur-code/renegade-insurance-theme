@@ -1,20 +1,32 @@
 @mixin tiny-screens() {
-  @media only screen and (max-width: 360px) {
+  @media only screen and (max-width: em(360px)) {
     @content;
   }
 }
 @mixin small-screens() {
-  @media only screen and (max-width: 480px) {
+  @media only screen and (max-width: em(480px)) {
     @content;
   }
 }
 @mixin medium-screens() {
-  @media only screen and (max-width: 767px) {
+  @media only screen and (max-width: em(767px)) {
     @content;
   }
 }
 @mixin large-screens() {
-  @media only screen and (max-width: 1024px) {
+  @media only screen and (max-width: em(1024px)) {
+    @content;
+  }
+}
+
+@mixin larger-screens() {
+  @media only screen and (max-width: em(1220px)) {
+    @content;
+  }
+}
+
+@mixin container-screen-size() {
+  @media only screen and (max-width: em(1440px)) {
     @content;
   }
 }
